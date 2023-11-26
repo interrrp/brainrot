@@ -1,6 +1,7 @@
 {
   "imports": {
-    "std/": "https://deno.land/std@0.208.0/"
+    "std/": "https://deno.land/std@0.208.0/",
+    "discordeno": "https://deno.land/x/discordeno@18.0.1/mod.ts"
   },
   "tasks": {
     "start": "deno run -A src/main.ts"
