@@ -1,5 +1,5 @@
 import { Bot } from "discordeno";
-import { randomElement } from "../utils.ts";
+import { randomElement, randomIndex } from "../utils.ts";
 
 const BRAINROT_WORDS = [
   "skibidi toilet",
@@ -32,9 +32,9 @@ function correct(message: string): string {
 
   const numIncorrectWords = Math.floor(words.length / 3);
   for (let i = 0; i < numIncorrectWords; i++) {
-    const randomIndex = Math.floor(Math.random() * words.length);
+    const wordIndex = randomIndex(words);
     const randomWord = randomElement(BRAINROT_WORDS);
-    words[randomIndex] = `**${randomWord}**`;
+    words[wordIndex] = `**${randomWord}**`;
   }
 
   return words.join(" ");
