@@ -1,5 +1,6 @@
 import { createBot, GatewayIntents, startBot } from "discordeno";
 import "./config.ts";
+import { registerMessageCreateHandler } from "./events/message_create.ts";
 import { registerReadyHandler } from "./events/ready.ts";
 
 const bot = createBot({
@@ -8,5 +9,6 @@ const bot = createBot({
 });
 
 registerReadyHandler(bot);
+registerMessageCreateHandler(bot);
 
 await startBot(bot);
